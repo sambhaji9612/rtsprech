@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> RTSP Recorder </title>
+</head>
+<body>
+<a href="{% url 'startrec' %}"> Start</a><br>
+<a href="{% url 'show' %}" >show recorded videos </a>
+{% if message %}
+{{ message }}
+
+<img src="{% url 'start' %}">
+
+
+{% endif %}
+
+
+{% if recordin %}
+    {% for files in recordin %}
+
+    {{ files }}
+        <br>
+
+    {% endfor %}
+{% endif %}
+<button type="button" ></button>
+</body>
+</html>
